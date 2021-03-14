@@ -35,8 +35,18 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
+      - name: nginx_container
         image: nginx_image
         imagePullPolicy: Never 
         ports:
         - containerPort: 80
+          name: http
+        - containerPort: 443
+          name: https
+      # livenessProbe:
+      #   exec:
+      #     command:
+      #     - pgrep
+      #     - nginx
+      #   initialDelaySeconds: 30
+      #   periodSeconds: 10

@@ -1,6 +1,6 @@
 FROM alpine:3.12
 RUN apk update && apk upgrade
-RUN apk add nginx; apk add openssl
+RUN apk add nginx; apk add openssl; apk add openrc; apk add telegraf --repository http://dl-2.alpinelinux.org/alpine/edge/community --allow-untrusted --no-cache
 
 COPY ./nginx.conf /etc/nginx/
 
@@ -17,5 +17,6 @@ RUN mkdir -p /run/nginx
 COPY ./index.html /www/index.html
 
 COPY ./init_nginx.sh .
+COPY ./telegraf.conf ./etc/telegraf.conf
 RUN chmod +x init_nginx.sh
 CMD sh init_nginx.sh
