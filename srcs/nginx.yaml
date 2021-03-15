@@ -35,7 +35,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx_container
+      - name: nginx
         image: nginx_image
         imagePullPolicy: Never 
         ports:
@@ -43,10 +43,11 @@ spec:
           name: http
         - containerPort: 443
           name: https
-      # livenessProbe:
-      #   exec:
-      #     command:
-      #     - pgrep
-      #     - nginx
-      #   initialDelaySeconds: 30
-      #   periodSeconds: 10
+        livenessProbe:
+          exec:
+            command:
+            - /bin/sh
+            - -c
+            - pgrep nginx
+          initialDelaySeconds: 10
+          periodSeconds: 5

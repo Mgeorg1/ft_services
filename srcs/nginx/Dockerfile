@@ -19,4 +19,4 @@ COPY ./index.html /www/index.html
 COPY ./init_nginx.sh .
 COPY ./telegraf.conf ./etc/telegraf.conf
 RUN chmod +x init_nginx.sh
-CMD sh init_nginx.sh
+ENTRYPOINT sh init_nginx.sh
