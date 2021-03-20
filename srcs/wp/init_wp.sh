@@ -2,5 +2,5 @@
 openrc
 touch /run/openrc/softlevel
 rc-status
-rc-service -v php-fpm7 start
+rc-service php-fpm7 start
 nginx -g "daemon off;"
