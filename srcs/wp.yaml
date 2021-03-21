@@ -30,8 +30,8 @@ spec:
           image: wordpress_image
           imagePullPolicy: Never
           ports:
-            - name: wordpress
-              containerPort: 5050
+          - name: wordpress
+            containerPort: 5050
   replicas: 1
   selector:
     matchLabels:
