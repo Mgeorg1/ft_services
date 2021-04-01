@@ -16,11 +16,11 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: wp-dep
+  name: wpordpress-deployment
 spec:
   template:
     metadata:
-      name: wordpress-pod
+      name: wordpress
       labels:
         app: wordpress
         type: wordpress
