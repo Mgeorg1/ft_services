@@ -7,7 +7,6 @@ RUN 	apk update && apk upgrade; apk add influxdb openrc telegraf
 COPY	./telegraf.conf /etc/
 
 COPY	./init_influxdb.sh .
-COPY	./telegraf.conf /etc/
 
 RUN		chmod +x init_influxdb.sh
 
