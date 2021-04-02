@@ -5,7 +5,6 @@ RUN 	apk update && apk upgrade
 RUN		apk add openrc grafana telegraf
 COPY 	./telegraf.conf /etc/
 COPY 	./grafana.ini /etc/
-COPY	./check.sh /
-COPY	./start_grafana.sh ./
+COPY	./init_grafana.sh ./
 RUN		chmod +x init_grafana.sh
 CMD		sh init_grafana.sh

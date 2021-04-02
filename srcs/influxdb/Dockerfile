@@ -11,4 +11,6 @@ COPY	./telegraf.conf /etc/
 
 RUN		chmod +x init_influxdb.sh
 
+EXPOSE 	8086
+
 CMD		sh init_influxdb.sh

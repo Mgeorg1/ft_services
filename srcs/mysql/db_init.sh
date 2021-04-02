@@ -1,7 +1,6 @@
 #!bin/sh/
 openrc
 touch run/openrc/softlevel
-rc-status
 /etc/init.d/telegraf start
 /etc/init.d/mariadb setup
 /etc/init.d/mariadb start
