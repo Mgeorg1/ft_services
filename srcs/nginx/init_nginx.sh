@@ -1,5 +1,5 @@
 #!/bin/sh/
 openrc
 touch run/openrc/softlevel
-usr/bin/telegraf start
+/etc/init.d/telegraf start
 nginx -g 'daemon off;'
