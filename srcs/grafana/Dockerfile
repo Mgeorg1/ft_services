@@ -6,5 +6,7 @@ RUN		apk add openrc grafana telegraf
 COPY 	./telegraf.conf /etc/
 COPY 	./grafana.ini /etc/
 COPY	./init_grafana.sh ./
+RUN     rm /usr/share/grafana/data/grafana.db
+COPY 	./grafana.db /usr/share/grafana/data
 RUN		chmod +x init_grafana.sh
 CMD		sh init_grafana.sh

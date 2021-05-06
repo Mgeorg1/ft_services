@@ -1,4 +1,3 @@
-#!bin/sh/
 openrc
 touch run/openrc/softlevel
 /etc/init.d/telegraf start
@@ -11,3 +10,4 @@ echo "GRANT ALL PRIVILEGES ON wordpress.* TO 'admin'@'%' identified by 'admin' W
 echo "FLUSH PRIVILEGES;"| mysql
 mysql < mysql-svc.sql
 sh usr/share/mariadb/mysql.server start
+tail -f dev/null

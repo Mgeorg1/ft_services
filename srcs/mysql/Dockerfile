@@ -5,6 +5,6 @@ RUN apk update && apk upgrade;  apk add openrc mysql mysql-client; \
 COPY ./db_init.sh .
 COPY my.cnf /etc/my.cnf
 COPY mysql-svc.sql ./
-COPY	./telegraf.conf /etc/telegraf/
+COPY	./telegraf.conf /etc/
 EXPOSE 3306
 CMD sh db_init.sh
