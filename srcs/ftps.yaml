@@ -44,3 +44,11 @@ spec:
         - containerPort: 21
         - containerPort: 21010
         - containerPort: 20
+        livenessProbe:
+          exec:
+            command:
+            - /bin/sh
+            - -c
+            - 'pgrep vsftpd && pgrep telegraf'
+          initialDelaySeconds: 10
+          periodSeconds: 5

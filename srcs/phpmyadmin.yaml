@@ -36,3 +36,11 @@ spec:
           imagePullPolicy: Never
           ports:
             - containerPort: 5000
+          livenessProbe:
+            exec:
+              command:
+              - /bin/sh
+              - -c
+              - 'pgrep nginx && pgrep telegraf && pgrep php'
+            initialDelaySeconds: 10
+            periodSeconds: 5

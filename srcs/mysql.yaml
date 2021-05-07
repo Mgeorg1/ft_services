@@ -47,7 +47,14 @@ spec:
         imagePullPolicy: Never
         ports:
         - containerPort: 3306
-          name: 
+        livenessProbe:
+          exec:
+            command:
+            - /bin/sh
+            - -c
+            - 'pgrep mysqld && pgrep telegraf'
+          initialDelaySeconds: 10
+          periodSeconds: 5
         volumeMounts:
         - name: mysql-persistent-volume
           mountPath: "var/lib/mysql"

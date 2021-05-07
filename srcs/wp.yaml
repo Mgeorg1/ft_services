@@ -32,6 +32,14 @@ spec:
           ports:
           - name: wordpress
             containerPort: 5050
+          livenessProbe:
+            exec:
+              command:
+              - /bin/sh
+              - -c
+              - 'pgrep nginx && pgrep telegraf && pgrep php'
+            initialDelaySeconds: 10
+            periodSeconds: 5
   replicas: 1
   selector:
     matchLabels:

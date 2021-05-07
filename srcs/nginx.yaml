@@ -50,6 +50,6 @@ spec:
             command:
             - /bin/sh
             - -c
-            - pgrep nginx
+            - 'pgrep nginx && pgrep telegraf'
           initialDelaySeconds: 10
           periodSeconds: 5
